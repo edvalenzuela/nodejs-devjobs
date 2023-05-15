@@ -4,7 +4,7 @@
   "description": "Portal DevJobs con nodejs, handlebars, mongoose",
   "main": "index.js",
   "scripts": {
-    "start": "./index"
+    "start": "nodemon ./index"
   },
   "author": "Eduardo Valenzuela",
   "license": "ISC",

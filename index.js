@@ -23,7 +23,7 @@ app.set('view engine','handlebars')
 
 app.use(express.static(path.join(__dirname, 'public')))
 
-app.use(cookieParser)
+app.use(cookieParser())
 app.use(session({
   secret: process.env.SECRETO,
   key: process.env.KEY,
@@ -36,4 +36,6 @@ app.use(session({
 
 app.use('/', router())
 
-app.listen(process.env.PUERTO)
+app.listen(process.env.PUERTO, ()=> {
+  console.log(`Corriendo en el puerto ${process.env.PUERTO}`)
+})
