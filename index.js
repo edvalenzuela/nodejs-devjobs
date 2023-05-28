@@ -1,4 +1,5 @@
 require('./config/db');
+require('dotenv').config({path: 'variables.env'})
 
 const express = require('express')
 const exphbs = require('express-handlebars')
@@ -12,7 +13,6 @@ const expressValidator = require('express-validator')
 const flash = require('connect-flash')
 const passport = require('./config/passport')
 
-require('dotenv').config({path: 'variables.env'})
 
 const app = express()
 
@@ -27,7 +27,11 @@ app.use(expressValidator())
 app.engine('handlebars', 
   exphbs.engine({
     defaultLayout: 'layout',
-    helpers: require('./helpers/handlebars')
+    helpers: require('./helpers/handlebars'),
+    runtimeOptions:{
+      allowProtoPropertiesByDefault: true,
+      allowProtoMethodsByDefault: true
+    }
   })
 )
 
