@@ -11,6 +11,7 @@
   "author": "Eduardo Valenzuela",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.4.0",
     "bcrypt": "^5.1.0",
     "concurrently": "^8.0.1",
     "connect-flash": "^0.1.1",
@@ -25,7 +26,8 @@
     "passport": "^0.6.0",
     "passport-local": "^1.0.0",
     "shortid": "^2.2.16",
-    "slug": "^8.2.2"
+    "slug": "^8.2.2",
+    "sweetalert2": "^11.7.6"
   },
   "devDependencies": {
     "@babel/core": "^7.21.8",
