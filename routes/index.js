@@ -57,6 +57,22 @@ module.exports = () => {
     authController.cerrarSesion
   )
 
+  //resetear password (emails)
+  router.get('/reestablecer-password',
+    authController.formReestablecerPasword
+  )
+  router.post('/reestablecer-password', 
+    authController.enviarToken
+  )
+
+  //resetear password (almacenar en la BD)
+  router.get('/reestablecer-password/:token',
+    authController.reestablecerPassword
+  )
+  router.post('/reestablecer-password/:token',
+    authController.guardarPassword
+  )
+
   // panel de administración
   router.get('/administracion', 
     authController.verificarUsuario,
